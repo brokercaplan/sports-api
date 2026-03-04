@@ -1,0 +1,33 @@
+{
+  "name": "sports-api",
+  "version": "1.0.0",
+  "description": "Free sports data aggregation system with cron scraping",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "scrape": "node src/scrapers/run-scrapers.js",
+    "api": "node src/api/server.js",
+    "db:setup": "psql $DATABASE_URL -f sql/schema.sql",
+    "test": "jest"
+  },
+  "keywords": ["sports", "scraper", "api", "cron"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "pg": "^8.11.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
